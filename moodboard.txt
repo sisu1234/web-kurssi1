@@ -1,0 +1,15 @@
+# Moodboard: [Lapuan Lepakot]
+
+## Tunnelma
+Upea, selkeä ja mahtava, koska se on tehty hyvin
+
+## Värit
+| Satama | Heksa | Käyttö |
+Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua
+
+## Fontit 
+
+Arial ja sans-serif, koska ne ovat helppolukuisia
+

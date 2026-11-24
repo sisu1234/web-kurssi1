@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilmoittautuminen</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <header>
+    <h1>Ilmoittautuminen</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Etusivu</a></li>
+            <li><a href="contact.html">Ilmoittautuminen</a></li>
+            <li><a href="about.html">Tietoa meistä</a></li>
+            <li><a href="listing.html">Tulevat pelit</a></li>
+
+    </nav>
+  </header>
+    <form id="ilmoittautuminen" novalidate>
+    <div class="kentta">
+    <label for="etunimi">Etunimi:</label>
+    <input id="etunimi" name="etunimi" type="text" required>
+  </div>
+
+  <div class="kentta">
+    <label for="sukunimi">Sukunimi:</label>
+    <input id="sukunimi" name="sukunimi" type="text" required>
+  </div>
+
+  <div class="kentta">
+    <label for="puhelin">Puhelin:</label>
+    <input id="puhelin" name="puhelin" type="tel" required>
+  </div>
+
+  <div class="kentta">
+    <label for="sahkoposti">Sähköposti:</label>
+    <input id="sahkoposti" name="sahkoposti" type="email" required>
+  </div>
+
+  <div class="kentta">
+  <label for="joukkue">Joukkue:</label>
+  <select id="joukkue" name="joukkue" required>
+    <option value="">Valitse joukkue</option>
+    <option value="naiset">Naiset</option>
+    <option value="miehet">Miehet</option>
+    <option value="juniorit">Juniorit</option>
+  </select>
+</div>
+<footer>
+  <p>&copy; 2023 Lapuan Lepakot. Kaikki oikeudet pidätetään.</p>
+</footer>
+    <button type="submit">Lähetä</button>
+    <p id="virhe" role="alert" class="virhe">color: red;"></p>
+</form>
+
+<p id="onnistuminen" role="status" class="onnistuminen">color: green;"></p>
+
+<script>
+  const lomake = document.getElementById("ilmoittautuminen");
+  const virhe = document.getElementById("virhe");
+  const onnistuminen = document.getElementById("onnistuminen");
+
+  lomake.addEventListener("submit", function (tapahtuma) {
+    tapahtuma.preventDefault(); // Estää sivun uudelleenlatauksen
+
+    if (!lomake.checkValidity()) {
+      virhe.textContent = "Täytä kaikki pakolliset kentät oikein.";
+      onnistuminen.textContent = "";
+      lomake.reportValidity(); // Näyttää myös selaimen kenttäkohtaiset huomautukset
+      return;
+    }
+
+    virhe.textContent = "";
+    onnistuminen.textContent = "Tiedot lähetetty!";
+    lomake.reset();
+  });
+</script>
+</body>
+</html>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae officiis similique omnis suscipit sit rerum, impedit natus excepturi modi harum atque rem quia? Vel voluptate, soluta placeat accusantium quo ex.
